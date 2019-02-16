@@ -3,10 +3,10 @@
 
 #include "IUnknown_vTable.h"
 
-typedef  HRESULT (__stdcall *funcPtr_IDispatch_GetTypeInfoCount)(void*, UINT *pctInfo);
-typedef  HRESULT (__stdcall *funcPtr_IDispatch_GetTypeInfo     )(void*, UINT iTInfo, LCID lcid, ITypeInfo **ppTI);
-typedef  HRESULT (__stdcall *funcPtr_IDispatch_GetIDsOfNames   )(void*, REFIID riid, LPOLESTR *rgszNames, UINT cNames, LCID lcid, DISPID *rgDispId);
-typedef  HRESULT (__stdcall *funcPtr_IDispatch_Invoke          )(void*, DISPID dispidMember, REFIID riid, LCID lcid, WORD wFlags, DISPPARAMS *pDispParams, VARIANT *pvarResult, EXCEPINFO *pExcepInfo, UINT *puArgErr);
+typedef  HRESULT (STDMETHODCALLTYPE *funcPtr_IDispatch_GetTypeInfoCount)(void *self, UINT *pctInfo);
+typedef  HRESULT (STDMETHODCALLTYPE *funcPtr_IDispatch_GetTypeInfo     )(void *self, UINT iTInfo, LCID lcid, ITypeInfo **ppTI);
+typedef  HRESULT (STDMETHODCALLTYPE *funcPtr_IDispatch_GetIDsOfNames   )(void *self, REFIID riid, LPOLESTR *rgszNames, UINT cNames, LCID lcid, DISPID *rgDispId);
+typedef  HRESULT (STDMETHODCALLTYPE *funcPtr_IDispatch_Invoke          )(void *self, DISPID dispidMember, REFIID riid, LCID lcid, WORD wFlags, DISPPARAMS *pDispParams, VARIANT *pvarResult, EXCEPINFO *pExcepInfo, UINT *puArgErr);
 
 typedef struct {
  //

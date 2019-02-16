@@ -1,9 +1,9 @@
 #ifndef IUNKNOWN_VTABLE_INCLUDED
 #define IUNKNOWN_VTABLE_INCLUDED
 
-typedef  HRESULT (__stdcall *funcPtr_IUnknown_QueryInterface)(void*, const IID*, void**);
-typedef  HRESULT (__stdcall *funcPtr_IUnknown_AddRef        )(void*);
-typedef  HRESULT (__stdcall *funcPtr_IUnknown_Release       )(void*);
+typedef  HRESULT (STDMETHODCALLTYPE  *funcPtr_IUnknown_QueryInterface)(void* self, REFIID riid, void **ppvObj);
+typedef  HRESULT (STDMETHODCALLTYPE  *funcPtr_IUnknown_AddRef        )(void* self);
+typedef  HRESULT (STDMETHODCALLTYPE  *funcPtr_IUnknown_Release       )(void* self);
 
 //
 // Create a macro for the IUnknown vTable because these
